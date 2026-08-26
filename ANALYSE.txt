@@ -1,0 +1,8 @@
+Application Web Mobile pour suivre simplement la forme physique des utilisateurs
+Calculer IMC, suivre le progrès de l'utilisateur, présenter des indicateurs de progression de manière claire/motivante
+
+ANALYSE ET CONCEPTION:
+-> Les besoins
+    Qui sera suseptible d'utiliser l'application ? | Des sportifs, des personnes qui venlent perdre du poids (plus ou moins obèses), des personnes qui veulent connaitre leur IMC
+    Les fonctionnalités principales | Calculer l'IMC, enregistrer tous les IMC dans le localStorage, lister les IMC (5 derniers enregistés/tous)
+    Contraites du projet | Support de la PWA variante selon le navigateur de choix de l'utilisateur, le localStorage qui a ses limites (varient entre les navigateurs)

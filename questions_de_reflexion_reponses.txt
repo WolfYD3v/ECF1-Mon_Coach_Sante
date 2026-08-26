@@ -1,0 +1,21 @@
+I: Installer et configurer son environnement de travail
+
+Editeur de code (IDE):
+J'ai choisi d'utiliser VSCode principalement car déjà il marche bien, et est stable, sur mon installation Linux.
+En plus d'intégrer Emet, ses raccourcis sont très pratiques pour gagner du temps lors du développement du site. Rien que "!" pour générer une base de fichier HTML, ou même "div.flex-container#calculating-saving-imc-container" pour créer un div avec la class "flex-container", et un l'id "calculating-saving-imc-container".
+Son support d'extensions, surtout de celles liées au développement Web dans mon cas, était un bon argument pour dev avec VSCode. LiveServer, pour lancer un serveur local. Ou JSON Crack, pour visualiser graphiquement un fichier JSON étaient des extensions très utiles.
+Le support de lancer des terminaux depuis l'éditeur de code directement est très agréable. Combiné au système des Tasks, je peux avoir un workflow où je lance un serveur Python dans un terminal, et en ouvrir un autre pour exécuter des commandes git. Automatiquement dès le lancement de VSCode.
+
+Navigateurs de test:
+J'ai utilisé deux navigateurs différents pour tester le site: Brave, qui est Chromium based. Et Firefox Desktop, qui est Gecko based.
+Je peux alors voir si le site marche comme attendu sur deux nvigateurs principaux, qui utilisent deux technologies différentes.
+
+Outils utilisés pour le débogage:
+La console de développeur des deux navigateurs de test est un indispensable dans ce domaine. Surtout pour debug les problèmes de style, et de JavaScript.
+Pour vérifier que le site est bien une PWA fonctionnelle, comme Firefox Desktop a un mauvais support de la PWA je test ce point sur Brave. Qui lui n'a pas ce soucis.
+Et pour tester le responsive, l'extension "Mobile First" me permet de simuler l'affichage du site sur un appareil mobile, comme sur une tablette ou sur un ordinateur. Sans devoir changer la taille du navigateur, ou celle de la console.
+
+
+
+II: Maquetter des interfaces web ou web mobile
+
