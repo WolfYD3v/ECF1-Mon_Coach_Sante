@@ -11,8 +11,9 @@ const FILES_TO_CACHE = [
     "/assets/fonts/Jost-Regular.woff2",
     "/assets/fonts/Jura-Light.woff2",
     "/style/style.css",
-    "/style/colors.css",
-    "/style/typography.css",
+    "/style/utilities/colors.css",
+    "/style/utilities/typography.css",
+    "/style/utilities/flex.css",
     "/style/pages/index.css",
     "/js/app.js"
 ]

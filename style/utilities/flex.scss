@@ -1,0 +1,27 @@
+// COMMAND TO RUN TO COMPILE THE CSS FROM THE ROOT DIRECTORY OF THE PROJECT:
+// sass --style=compact style/utilities/flex.scss style/utilities/flex.css
+
+@mixin flex($dir: row) {
+    display: flex;
+    flex-direction: $dir;
+}
+@mixin align-items($dir: stretch) {
+    align-items: $dir;
+}
+@mixin justify-content($dir: stretch) {
+    justify-content: $dir;
+}
+
+.flex { @include flex(); }
+.flex-row { @include flex(row); }
+.flex-column { @include flex(column); }
+
+.align-items-stretch { @include align-items(stretch); }
+.align-items-center { @include align-items(center); }
+.align-items-start { @include align-items(start); }
+.align-items-end { @include align-items(end); }
+
+.justify-content-stretch { @include justify-content(stretch); }
+.justify-content-center { @include justify-content(center); }
+.justify-content-start { @include justify-content(start); }
+.justify-content-end { @include justify-content(end); }
