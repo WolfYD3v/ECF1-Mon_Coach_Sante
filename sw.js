@@ -8,7 +8,12 @@ const FILES_TO_CACHE = [
     "/assets/icons/base_icon.png",
     "/assets/icons/icon512_maskable.png",
     "/assets/icons/icon512_rounded.png",
+    "/assets/fonts/Jost-Regular.woff2",
+    "/assets/fonts/Jura-Light.woff2",
     "/style/style.css",
+    "/style/colors.css",
+    "/style/typography.css",
+    "/style/pages/index.css",
     "/js/app.js"
 ]
 
