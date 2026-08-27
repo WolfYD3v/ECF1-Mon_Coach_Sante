@@ -1,7 +1,7 @@
 :root {
     /* Backgrounds */
-    --background-gradient:                 linear-gradient(to top right, #FFFFFF 0% 50%, #D3D3D3 90% 100%);
-    --perlin-noise-background:             linear-gradient(to bottom, #B4FFE5 0% 15%, #99BDFF 50%, #E298FB 85% 100%);
+    --background-gradient:                 linear-gradient(to bottom, #FFFFFF 0% 50%, #D3D3D3 90% 100%);
+    --perlin-noise-background:             linear-gradient(to top right, #B4FFE5 0% 15%, #99BDFF 50%, #E298FB 85% 100%);
 
     /* Text Colors */
     --form-input-placeholder-text-color:   rgba(34, 24, 28, 0.85);
