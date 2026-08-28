@@ -5,24 +5,20 @@
 
 @font-face {
     font-family: 'Jost';
-    src: url("../assets/fonts/Jost-Regular.woff2") format('woff2');
+    src: url("../../assets/fonts/Jost-Regular.woff2") format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Jura';
-    src: url("../assets/fonts/Jura-Light.woff2") format('woff2');
+    src: url("../../assets/fonts/Jura-Light.woff2") format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
 }
 
-body, h2, h3, h4, h5, h6 {
-    font-family: var(--text-font);
-}
-
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--text-font);
 }
 

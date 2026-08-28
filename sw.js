@@ -1,30 +1,22 @@
 const CURRENT_CACHE_NAME = "v1";
 const ALLOWED_CACHES = ["v1"];
-const FILES_TO_CACHE = [
-    "/",
-    "/sw.js",
-    "/index.html",
-    "/manifest.json",
-    "/assets/icons/base_icon.png",
-    "/assets/icons/icon512_maskable.png",
-    "/assets/icons/icon512_rounded.png",
-    "/assets/fonts/Jost-Regular.woff2",
-    "/assets/fonts/Jura-Light.woff2",
-    "/style/style.css",
-    "/style/utilities/colors.css",
-    "/style/utilities/typography.css",
-    "/style/utilities/flex.css",
-    "/style/pages/index.css",
-    "/js/app.js"
-]
+const FILES_TO_CACHE_JSON_FILE = "sw_files_to_cache_json.json"
+
+
 
 self.addEventListener("install", event => {
     console.log("Service Worker Installed !");
     event.waitUntil(
         caches.open(CURRENT_CACHE_NAME)
-            .then(cache => cache.addAll(FILES_TO_CACHE))
-    )
-})
+            .then(cache => cache.addAll([FILES_TO_CACHE_JSON_FILE]))
+            .then(() => caches.match(FILES_TO_CACHE_JSON_FILE)
+                .then(r => r.json())
+            )
+            .then(files => caches.open(CURRENT_CACHE_NAME)
+                .then(cache => cache.addAll(files))
+            )
+    );
+});
 self.addEventListener("activate", event => {
     console.log("Service Worker Activated !");
     event.waitUntil(
