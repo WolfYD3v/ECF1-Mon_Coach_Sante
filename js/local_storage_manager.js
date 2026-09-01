@@ -3,7 +3,7 @@ TODO:
 
 - Create base JSON file structure     [DONE]
 - Write JSON files on localStorage    [DONE]
-- Read JSON files on localStorage
+- Read JSON files on localStorage     [DONE]
 - Delete JSON files on localStorage   [DONE]
 */
 
@@ -49,7 +49,7 @@ function lookForAvaibleFileIdx() {
 function writeJSONFile(entryKey, data) {
     if (localStorage.length >= entryKey + 1) {
         let dataToUpdate = JSON.parse(localStorage.getItem(entryKey));
-        dataToUpdate.push(data);
+        dataToUpdate = [data, ...dataToUpdate];
         localStorage.setItem(entryKey, JSON.stringify(dataToUpdate));
     }
     else {
@@ -58,7 +58,7 @@ function writeJSONFile(entryKey, data) {
 }
 
 function updateLocalStorage(data) {
-    let avaibleFileIdx = lookForAvaibleFileIdx();;
+    let avaibleFileIdx = lookForAvaibleFileIdx();
     writeJSONFile(avaibleFileIdx, data);
 }
 
@@ -71,10 +71,10 @@ export function getData(maxEntries = 0) {
     let data = [];
 
     let baseData = [];
-    for (let idx = 0; idx < localStorage.length; idx++) {
+    for (let idx = localStorage.length - 1; idx >= 0; idx--) {
         let key = localStorage.key(idx);
-        let parsedJSONFileEntry = JSON.parse(localStorage.getItem(key));
-        baseData = baseData.concat(parsedJSONFileEntry);
+        let parsedJSONFileEntry = JSON.parse(localStorage.getItem(String(idx)));
+        baseData = [...baseData, ...parsedJSONFileEntry];
     }
 
     let iter = baseData.length;
@@ -96,7 +96,7 @@ export function testLocalStorageManager() {
 
     console.log("Testing saving data...");
     for (let loop = 0; loop < 92; loop++) {
-       updateLocalStorage(testJSONEntry); 
+       updateLocalStorage(BASE_JSON_FILE_IMC_CALCULATED_ENTRY(loop, "OK")); 
     }
 
     console.log("Testing fetching data...");
