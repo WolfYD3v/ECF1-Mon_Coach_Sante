@@ -1,0 +1,109 @@
+:root {
+    --width: 250px;
+    --height: 100vh;
+}
+
+header {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    overflow: hidden;
+}
+
+@keyframes background-animation-desktop {
+    0% {
+        transform:
+            translateX(-50%),
+            rotate(0.0);
+    }
+    50% { transform: translateX(-75%); }
+    100% {
+        transform:
+            translateX(-50%),
+            rotate(360.0);
+    }
+}
+@keyframes background-animation-mobile {
+    0% {
+        transform:
+            translateX(-50%),
+            rotate(0.0);
+    }
+    50% { transform: translateX(-62%); }
+    100% {
+        transform:
+            translateX(-50%),
+            rotate(360.0);
+    }
+}
+
+#header-background {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 350vw;
+    height: 350vh;
+    background: var(--perlin-noise-background);
+    z-index: -1;
+    pointer-events: none;
+    animation: background-animation-desktop 20.0s ease-in-out infinite;
+}
+
+#header-content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#header-base-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 15px 5px 15px;
+    width: var(--width);
+    height: var(--height);
+}
+#header-base-section > a {
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 1/1;
+}
+#header-website-logo {
+    width: 80px;
+    aspect-ratio: 1/1;
+}
+#header-toggle-burger-menu-mobile-btn {
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+#header-mobile-burger-menu {
+    padding: 15px 7px 7px 7px;
+    display: none;
+}
+#header-mobile-burger-menu button {
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        --width: 100vw;
+        --height: fit-content
+    }
+    #header-background {
+        animation: background-animation-mobile 20.0s ease-in-out infinite;
+    }
+    #header-base-section {
+        padding: 7px;
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    #header-base-section > a {
+        width: 35px;
+        height: 35px;
+    }
+    #header-website-logo { width: 35px; }
+    #header-delete-data-btn { display: none; }
+    #header-toggle-burger-menu-mobile-btn { display: block; }
+}

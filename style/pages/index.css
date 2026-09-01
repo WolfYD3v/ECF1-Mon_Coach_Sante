@@ -1,4 +1,124 @@
+:root {
+    --health-score-bar-height: 25px;
+}
+
 body {
     height: 100vh;
+    display: flex;
+    flex-direction: row;
     background: var(--background-gradient);
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 65px 0px 65px;
+}
+
+#container div {
+    width: 100%;
+}
+
+#container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+}
+
+#current-health-score {
+    font-weight: bold;
+    text-align: center;
+}
+#health-score-indicator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+#calculate-imc-btn {
+    width: 30%;
+    height: fit-content;
+    font-size: 1.15rem;
+    padding: 0.5rem;
+
+}
+
+#health-score-bars-container {
+    height: var(--health-score-bar-height);
+    position: relative;
+}
+#health-score-bars-container * {
+    border-radius: 15px;
+    height: var(--health-score-bar-height);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#health-score-bar-full {
+    border: 2px solid var(--health-score-bar-full-border-color);
+    background: var(--health-score-bar-full-background-color);
+    width: 100% !important;
+}
+#health-score-bar-filling {
+    background: var(--health-score-bar-filling-color);
+    width: 34% !important;
+}
+
+#health-score-bars-steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#health-score-bars-steps * {
+    width: 100px
+}
+#health-score-bars-steps :nth-child(1) {
+    text-align: left;
+}
+#health-score-bars-steps :nth-child(2) {
+    text-align: center;
+}
+#health-score-bars-steps :nth-child(3) {
+    text-align: right;
+}
+
+#last-imcs-calculated-menu {
+    height: fit-content !important;
+    background: white;
+    border-radius: 25px 25px 0px 0px;
+    padding: 5px 15px 5px 15px;
+    gap: 25px !important;
+    align-self: self-end;
+}
+#last-imcs-calculated-menu > h3 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+#last-imcs-calculated-container {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#no-calculated-imc-found-h3 {
+    text-align: center;
+}
+
+#see-all-calculated-imcs-btn {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    #container { padding: 5px 15px 0px 15px; }
+    #last-imcs-calculated-menu { gap: 15px !important; }
 }

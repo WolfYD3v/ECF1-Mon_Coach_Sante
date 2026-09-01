@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <title>Document</title>
+    <title>Mon Coach Santé</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/pages/index.css">
     <link rel="manifest" href="manifest.json">
@@ -11,10 +11,31 @@
     <script src="js/app.js"></script>
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 </head>
-<body class="flex-row">
-    <div id="header-container">
+<body>
+    <div id="header-container"></div>
+    <div id="container">
+        <div>
+            <div id="health-score-indicator-container">
+                <h1 id="current-health-score">900</h1>
+                <div id="health-score-bars-container">
+                    <div id="health-score-bar-full"></div>
+                    <div id="health-score-bar-filling"></div>
+                </div>
+                <div id="health-score-bars-steps">
+                    <h4>0</h4>
+                    <h4>450</h4>
+                    <h4>900</h4>
+                </div>
+            </div>
+            <button id="calculate-imc-btn" class="button">Calculer<br>mon IMC</button>
+        </div>
+
+        <div id="last-imcs-calculated-menu">
+            <h3>Derniers IMC Calculés</h3>
+            <div id="last-imcs-calculated-container"></div>
+            <a href="all_calculated_imcs.html" id="see-all-calculated-imcs-btn" class="blank-button">TOUT VOIR</a>
+        </div>
     </div>
-    <h1>Mon Coach Santé</h1>
 
     <script src="js/pages/index.js" type="module"></script>
 </body>

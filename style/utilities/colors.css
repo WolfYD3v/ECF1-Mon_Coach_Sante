@@ -1,11 +1,22 @@
 :root {
     /* Backgrounds */
     --background-gradient:                 linear-gradient(to bottom, #FFFFFF 0% 50%, #D3D3D3 90% 100%);
-    --perlin-noise-background:             linear-gradient(to top right, #b4ffe536 0% 15%, #99bdff36 50%, #e298fb36 85% 100%);
+    --perlin-noise-background:             linear-gradient(to top right, #b4ffe5 0% 15%, #99bdff 50%, #e298fb 85% 100%);
+    --button-background:                   #FFA666;
+    --blank-button-background:             rgba(255, 255, 255, 0.75);
 
     /* Text Colors */
     --form-input-placeholder-text-color:   rgba(34, 24, 28, 0.85);
     --header-text-color:                   #171214;
     --button-text-color:                   #22181C;
     --text-color:                          #22181C;
+
+    --health-score-bar-full-border-color: #FFA666;
+    --health-score-bar-full-background-color: #ffa66688;
+    --health-score-bar-filling-color: #FFA666;
+
+    --lastest-imc-calculated-card-border-color: #FFA666;
+    --lastest-imc-calculated-card-background-color: #ffa66688;
+
+    --scrollbar-color: #FFA666;
 }

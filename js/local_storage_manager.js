@@ -96,7 +96,7 @@ export function testLocalStorageManager() {
 
     console.log("Testing saving data...");
     for (let loop = 0; loop < 92; loop++) {
-       updateLocalStorage(BASE_JSON_FILE_IMC_CALCULATED_ENTRY(loop, "OK")); 
+       updateLocalStorage(BASE_JSON_FILE_IMC_CALCULATED_ENTRY(14, "OK")); 
     }
 
     console.log("Testing fetching data...");
