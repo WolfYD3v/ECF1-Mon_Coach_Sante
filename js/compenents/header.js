@@ -1,4 +1,4 @@
-import { eraseLocalStorage, testLocalStorageManager } from "../local_storage_manager.js";
+import { eraseLocalStorage } from "../local_storage_manager.js";
 
 let headerBurgerMenu;
 let toggleheaderBurgerMenuBtn;
@@ -16,7 +16,6 @@ export function tryInitHeader() {
             });
         });
         toggleHeaderBurgerMenu();
-        testLocalStorageManager();
     }
 }
 

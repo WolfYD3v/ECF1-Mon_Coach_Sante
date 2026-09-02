@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Mon Coach Santé</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/pages/calculate_imc.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="sw.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <div id="background"></div>
+    <div id="container">
+        <form id="calculate-imc-form" action="index.html" novalidate>
+            <h3>(tous les champs marqués par * doivent être rempli par des nombres)</h3>
+            <fieldset>
+                <label for="calculate-imc-form-height-input">Taille *</label>
+                <input type="number" name="calculate-imc-form-height-input" id="calculate-imc-form-height-input" step="0.01" required>
+                <label for="calculate-imc-form-weight-input">Poids *</label>
+                <input type="number" name="calculate-imc-form-weight-input" id="calculate-imc-form-weight-input" step="0.01" required>
+            </fieldset>
+            <button id="calculate-imc-form-btn" class="button">Calculer<br>mon IMC</button>
+        </form>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script src="js/pages/calculate_imc.js" type="module"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@ TODO:
 */
 
 const BASE_JSON_FILE_DATA = [];
-const BASE_JSON_FILE_IMC_CALCULATED_ENTRY = function(_calculatedIMC, _comment) {
+export const BASE_JSON_FILE_IMC_CALCULATED_ENTRY = function(_calculatedIMC, _comment) {
     return {
             calculatedIMC: _calculatedIMC,
             dateOfCalculation: getCurrentDate(),
@@ -57,7 +57,7 @@ function writeJSONFile(entryKey, data) {
     }
 }
 
-function updateLocalStorage(data) {
+export function updateLocalStorage(data) {
     let avaibleFileIdx = lookForAvaibleFileIdx();
     writeJSONFile(avaibleFileIdx, data);
 }

@@ -1,0 +1,88 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes background-animation {
+    0% {
+        transform:
+            translateX(-50%),
+            rotate(0.0);
+    }
+    50% { transform: translateX(-55%); }
+    100% {
+        transform:
+            translateX(-50%),
+            rotate(360.0);
+    }
+}
+
+#background {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 350vw;
+    height: 350vh;
+    background: var(--perlin-noise-background);
+    z-index: -1;
+    pointer-events: none;
+    animation: background-animation 20.0s ease-in-out infinite;
+}
+
+#container {
+    display: grid;
+    place-items: center;     /* Centre tout le contenu (horizontalement + verticalement) */
+    
+    width: 100%;             /* Prend toute la largeur disponible */
+    min-height: 100vh;       /* Prend toute la hauteur de l'écran */
+    box-sizing: border-box;
+    padding: 25px 100px 25px 100px;
+}
+
+#container > * {
+    grid-area: 1 / 1;        /* Force toutes les divs sur la même cellule (superposition) */
+    width: 100%;             /* Prend toute la largeur */
+    height: fit-content; /* Ajuste la hauteur au contenu */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+#calculate-imc-form > fieldset {
+    border: none;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#calculate-imc-form-btn {
+    width: 250px;
+    height: fit-content;
+    font-size: 1.15rem;
+    padding: 0.5rem;
+}
+
+label {
+    width: 100%;
+    text-align: left !important;
+}
+
+input {
+    outline: none;
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid var(--text-color);
+    background: var(--form-input-background);
+    font-size: 1.15rem;
+}
+input:focus {
+    font-size: 1.3rem;
+}

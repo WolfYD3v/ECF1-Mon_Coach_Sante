@@ -43,11 +43,10 @@ body {
 }
 
 #calculate-imc-btn {
-    width: 30%;
+    width: 250px;
     height: fit-content;
     font-size: 1.15rem;
     padding: 0.5rem;
-
 }
 
 #health-score-bars-container {
@@ -120,5 +119,6 @@ body {
 @media (max-width: 768px) {
     body { flex-direction: column; }
     #container { padding: 5px 15px 0px 15px; }
+    #calculate-imc-btn { width: 50%; }
     #last-imcs-calculated-menu { gap: 15px !important; }
 }

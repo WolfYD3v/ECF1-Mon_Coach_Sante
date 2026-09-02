@@ -40,7 +40,7 @@ if (data.length > 0) {
 else {
     allCalculatedIMCsContainer.insertAdjacentHTML("beforeend", `
         <h3 id="no-calculated-imc-found-h3">Aucuns IMC calculés trouvés, veuillez calculer votre premier IMC pour afficher un premier résultat</h3>
-        <a href="#" class="button">Calculer mon IMC</a>
+        <a href="calculate_imc.html" class="button">Calculer mon IMC</a>
     `);
 }
 

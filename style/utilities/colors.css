@@ -4,6 +4,7 @@
     --perlin-noise-background:             linear-gradient(to top right, #b4ffe5 0% 15%, #99bdff 50%, #e298fb 85% 100%);
     --button-background:                   #FFA666;
     --blank-button-background:             rgba(255, 255, 255, 0.75);
+    --form-input-background:               rgba(255, 255, 255, 0.75);
 
     /* Text Colors */
     --form-input-placeholder-text-color:   rgba(34, 24, 28, 0.85);

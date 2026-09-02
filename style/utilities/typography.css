@@ -1,3 +1,7 @@
+html {
+    font-size: 15px;
+}
+
 :root {
     --header-text-font:   "Jura", sans-serif;
     --text-font:          "Jost", sans-serif;
@@ -21,5 +25,12 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--text-font);
     color: var(--text-color);
+    font-size: 1rem;
+}
+
+label {
+    font-family: var(--text-font);
+    color: var(--text-color);
+    font-size: 1.2rem;
 }
 
