@@ -67,7 +67,7 @@ body {
 }
 #health-score-bar-filling {
     background: var(--health-score-bar-filling-color);
-    width: 34% !important;
+    width: 0% !important;
 }
 
 #health-score-bars-steps {
