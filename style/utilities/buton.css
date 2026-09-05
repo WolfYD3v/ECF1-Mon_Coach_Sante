@@ -21,6 +21,13 @@ button:hover, a:hover {
     background: var(--button-background);
     border-radius: 10px;
     animation: none;
+    transform: scale(1);
+    transition: all 1s ease-out;
+}
+.button:hover {
+    transform: scale(0.9);
+    background: var(--button-background-hovered);
+    transition: all 0.65s ease-in;
 }
 
 .blank-button {

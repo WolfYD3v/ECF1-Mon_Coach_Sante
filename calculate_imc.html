@@ -14,18 +14,29 @@
 <body>
     <div id="background"></div>
     <div id="container">
-        <form id="calculate-imc-form" action="index.html" novalidate>
-            <h3>(tous les champs marqués par * doivent être rempli par des nombres)</h3>
-            <fieldset>
-                <label for="calculate-imc-form-height-input">Taille *</label>
-                <input type="number" name="calculate-imc-form-height-input" id="calculate-imc-form-height-input" step="0.01" required>
-                <label for="calculate-imc-form-weight-input">Poids *</label>
-                <input type="number" name="calculate-imc-form-weight-input" id="calculate-imc-form-weight-input" step="0.01" required>
-            </fieldset>
-            <button id="calculate-imc-form-btn" class="button">Calculer<br>mon IMC</button>
-        </form>
-        <div></div>
-        <div></div>
+        <div id="menus">
+            <form id="calculate-imc-form" class="popup" action="#" novalidate>
+                <fieldset>
+                    <label for="calculate-imc-form-height-input">Taille (m) *</label>
+                    <input type="number" name="calculate-imc-form-height-input" id="calculate-imc-form-height-input" step="0.01" minlength="1" maxlength="10" inputmode="numeric" required>
+                    <div style="height: 10px;"></div>
+                    <label for="calculate-imc-form-weight-input">Poids (kg) *</label>
+                    <input type="number" name="calculate-imc-form-weight-input" id="calculate-imc-form-weight-input" step="0.01" minlength="1" maxlength="10" inputmode="numeric" required>
+                </fieldset>
+                <button id="calculate-imc-form-btn" class="button">Calculer<br>mon IMC</button>
+            </form>
+            <div id="imc-calculated-menu" class="force-hide">
+                <div style="display: flex; flex-direction: row; width: 100%; height: fit-content; align-items: flex-end; justify-content: center; gap: 0.5rem;">
+                    <h1 style="font-weight: 450;">Ton IMC est de: </h1>
+                    <h1 style="font-size: 1.55rem;">14</h1>
+                </div>
+                <div id="imc-calculated-menu-advice-container">
+                    <h3 style="font-size: 1.2rem;"></h3>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <a href="index.html" id="go-to-index-btn" class="blank-button">ANNULER</a>
     </div>
 
     <script src="js/pages/calculate_imc.js" type="module"></script>

@@ -2,9 +2,12 @@
     /* Backgrounds */
     --background-gradient:                 linear-gradient(to bottom, #FFFFFF 0% 50%, #D3D3D3 90% 100%);
     --perlin-noise-background:             linear-gradient(to top right, #b4ffe5 0% 15%, #99bdff 50%, #e298fb 85% 100%);
-    --button-background:                   #FFA666;
+    --button-background-hovered:           #ffa666b6;
+    --button-background:                   #ffa666;
     --blank-button-background:             rgba(255, 255, 255, 0.75);
-    --form-input-background:               rgba(255, 255, 255, 0.75);
+
+    --form-input-background:               #ffa66688;
+    --form-input-border-color:             #ffa666;
 
     /* Text Colors */
     --form-input-placeholder-text-color:   rgba(34, 24, 28, 0.85);
@@ -20,4 +23,6 @@
     --lastest-imc-calculated-card-background-color: #ffa66688;
 
     --scrollbar-color: #FFA666;
+
+    --button-border:                   #FFA666;
 }

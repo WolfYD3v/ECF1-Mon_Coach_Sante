@@ -52,6 +52,7 @@ body {
 #health-score-bars-container {
     height: var(--health-score-bar-height);
     position: relative;
+    overflow: hidden;
 }
 #health-score-bars-container * {
     border-radius: 15px;

@@ -15,6 +15,12 @@ export const BASE_JSON_FILE_IMC_CALCULATED_ENTRY = function(_calculatedIMC, _com
             comment: _comment
     }
 }
+const FORMAT_NUMBER = function(_number) {
+    let strNumber = String(_number);
+    if (strNumber.length < 2) { strNumber = `0${strNumber}`; }
+
+    return strNumber
+}
 const MAX_ENTRIES_AMOUNT_PER_JSON_FILE = 25;
 
 function getCurrentDate() {
@@ -24,7 +30,18 @@ function getCurrentDate() {
         "sept.", "oct.", "nov.", "dec."
     ]
     let date = new Date();
-    let formattedDate = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
+    let day = FORMAT_NUMBER(date.getDate());
+    let month = months[date.getMonth()];
+    let year = date.getFullYear();
+    let currentDay = `${day} ${month} ${year}`;
+
+    let hours = FORMAT_NUMBER(date.getHours());
+    let minutes = FORMAT_NUMBER(date.getMinutes());
+    let seconds = FORMAT_NUMBER(date.getSeconds());
+    let currentHours = `${hours}:${minutes}:${seconds}`;
+
+    let formattedDate = `${currentDay} - ${currentHours}`;
 
     return formattedDate
 }
@@ -47,19 +64,34 @@ function lookForAvaibleFileIdx() {
 }
 
 function writeJSONFile(entryKey, data) {
-    if (localStorage.length >= entryKey + 1) {
+    let promise = new Promise((resolve, reject) => {
+        let dataToUpdate = JSON.parse(localStorage.getItem(entryKey));
+        if (localStorage.length >= entryKey + 1) {
+            dataToUpdate = [data, ...dataToUpdate];
+            localStorage.setItem(entryKey, JSON.stringify(dataToUpdate));
+        }
+        else { localStorage.setItem(entryKey, JSON.stringify([data])); }
+
+        let dataUpdated = JSON.parse(localStorage.getItem(entryKey));
+        if (dataUpdated != dataToUpdate) { resolve("UPDATED !"); }
+        else { reject(new Error("UPDATE FAILED !")); }
+    });
+
+    return promise
+
+    /* if (localStorage.length >= entryKey + 1) {
         let dataToUpdate = JSON.parse(localStorage.getItem(entryKey));
         dataToUpdate = [data, ...dataToUpdate];
         localStorage.setItem(entryKey, JSON.stringify(dataToUpdate));
     }
     else {
         localStorage.setItem(entryKey, JSON.stringify([data]));
-    }
+    } */
 }
 
 export function updateLocalStorage(data) {
     let avaibleFileIdx = lookForAvaibleFileIdx();
-    writeJSONFile(avaibleFileIdx, data);
+    return writeJSONFile(avaibleFileIdx, data);
 }
 
 export function eraseLocalStorage() {

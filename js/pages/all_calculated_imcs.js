@@ -25,7 +25,6 @@ if (data.length > 0) {
     for (let idx = 0; idx < data.length; idx++) {
         let dataEntry = data[idx];
         let dataEntryImcCalculatedDayOfCreation = getImcCalculatedDayOfCreation(dataEntry);
-        console.log(dataEntryImcCalculatedDayOfCreation);
         if (dataEntryImcCalculatedDayOfCreation != imcCalculatedOldDayOfCreation) {
             allCalculatedIMCsContainer.insertAdjacentHTML("beforeend", createDaySection(dataToUse, imcCalculatedOldDayOfCreation));
             imcCalculatedOldDayOfCreation = dataEntryImcCalculatedDayOfCreation;
@@ -60,7 +59,7 @@ function createDaySection(dataRelated = [], day) {
             <div class="${mainDivClasses}">
                 <div>
                     <h3>${dataRelatedEntry.calculatedIMC}</h3>
-                    <h5>${dataRelatedEntry.dateOfCalculation}</h5>
+                    <h5 id="imc-calclated-card-date-of-creation">${dataRelatedEntry.dateOfCalculation}</h5>
                 </div>
                 <h3>${dataRelatedEntry.comment}</h3>
             </div>

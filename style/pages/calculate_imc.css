@@ -4,6 +4,30 @@ body {
     overflow: hidden;
 }
 
+@keyframes popup {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes popout {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+}
+
+.popup { animation: popup 1.5s ease-in-out; }
+.popout { animation: popout 2s ease-in; }
+
 @keyframes background-animation {
     0% {
         transform:
@@ -32,24 +56,48 @@ body {
 }
 
 #container {
-    display: grid;
-    place-items: center;     /* Centre tout le contenu (horizontalement + verticalement) */
-    
-    width: 100%;             /* Prend toute la largeur disponible */
-    min-height: 100vh;       /* Prend toute la hauteur de l'écran */
-    box-sizing: border-box;
-    padding: 25px 100px 25px 100px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 150px 0px 150px;
 }
 
-#container > * {
-    grid-area: 1 / 1;        /* Force toutes les divs sur la même cellule (superposition) */
-    width: 100%;             /* Prend toute la largeur */
-    height: fit-content; /* Ajuste la hauteur au contenu */
+#go-to-index-btn {
+    width: 100%
+}
+
+#menus {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#menus > * {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: fit-content;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
+}
+
+#calculate-imc-form {
+    background: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 65%;
 }
 
 #calculate-imc-form > fieldset {
@@ -59,7 +107,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 0px;
 }
 
 #calculate-imc-form-btn {
@@ -78,11 +126,53 @@ input {
     outline: none;
     width: 100%;
     border: none;
-    border-radius: 0px;
-    border-bottom: 2px solid var(--text-color);
+    border-radius: 10px;
+    border: 2px solid var(--form-input-border-color);
     background: var(--form-input-background);
-    font-size: 1.15rem;
+    font-size: 1.5rem;
+    padding: 2px 5px 2px 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 input:focus {
-    font-size: 1.3rem;
+    font-size: 1.55rem;
+}
+input:disabled {
+    background: none;
+    font-size: 1.55rem;
+}
+
+#imc-calculated-menu {
+    width: 65%;
+}
+
+#imc-calculated-menu-advice-container {
+    background: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.force-hide {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    #container { padding: 0px 15px 0px 15px; }
+    #calculate-imc-form, #imc-calculated-menu { width: 100%; }
+    input { font-size: 1.25rem; }
+    input:focus { font-size: 1.3rem; }
+    #calculate-imc-form-btn { width: 100%; }
 }

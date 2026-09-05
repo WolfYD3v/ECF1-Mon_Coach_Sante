@@ -25,12 +25,21 @@ html {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--text-font);
     color: var(--text-color);
-    font-size: 1rem;
 }
+h1 {
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+h2, h3, h4, h5, h6 { font-size: 1rem; }
 
-label {
+label, p {
     font-family: var(--text-font);
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 }
 
+p { margin: 0px !important; }
+
+@media (max-width: 768px) {
+    html { font-size: 10px; }
+}

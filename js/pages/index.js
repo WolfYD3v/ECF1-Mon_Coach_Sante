@@ -47,8 +47,7 @@ function calculateHealthScore() {
     let imcs = getData(1);
     if (imcs.length > 0) {
         // Got the calculated IMC from the latest data saved in the localStorage
-        let imcData = imcs[0];
-        let imc = imcData.calculatedIMC;
+        let imc = imcs[0].calculatedIMC;
 
         // Calculate the health score (0 to 100 as the answer)
         let imcOpt = 21.75;
