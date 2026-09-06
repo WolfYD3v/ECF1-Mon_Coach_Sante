@@ -3,6 +3,9 @@ let path = require('path');
 
 let swFilesToCacheJSON = "sw_files_to_cache_json.json";
 
+let forGithubPages = false;
+let githubPagesWebsiteName = "";
+
 
 
 function listFilesForJSON(directoryPath = ".", ignoreList = [""]) {
@@ -24,7 +27,7 @@ function listFilesForJSON(directoryPath = ".", ignoreList = [""]) {
             if (fs.statSync(`${directoryPath}/${file}`).isDirectory()) {
                 allFiles.push(...listFilesForJSON(`${directoryPath}/${file}`, ignoreList));
             }
-            else { allFiles.push(`${directoryPath}/${file}`); }
+            else { allFiles.push(`${directoryPath}/${file}`.slice(1)); }
         }
         else { console.log(`Ignoring '${file}' ...`); }
 
@@ -41,7 +44,7 @@ function createJSONFile(files = []) {
     });
 
     // Try to create the JSON file
-    files = ["./", ...files]
+    files = ["/", ...files]
     fs.writeFile(swFilesToCacheJSON, JSON.stringify(files), (err) => {
         if (err) { console.log(err); }
         console.log(`JSON File '${swFilesToCacheJSON}' Written Successfully ! Ready To Be Used By The Service Worker !`);
