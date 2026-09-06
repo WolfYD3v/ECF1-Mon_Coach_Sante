@@ -16,4 +16,7 @@
 
 html {
     font-size: 15px;
+    -ms-overflow-style: none !important;  /* For IE And Edge */
+    scrollbar-width: none !important;  /* For Firefox */
 }
+html::-webkit-scrollbar { display: none !important; /* For Chrome */  }
