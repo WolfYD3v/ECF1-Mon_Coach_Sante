@@ -27,7 +27,7 @@ function listFilesForJSON(directoryPath = ".", ignoreList = [""]) {
             if (fs.statSync(`${directoryPath}/${file}`).isDirectory()) {
                 allFiles.push(...listFilesForJSON(`${directoryPath}/${file}`, ignoreList));
             }
-            else { allFiles.push(`${directoryPath}/${file}`.slice(1)); }
+            else { allFiles.push(`${directoryPath}/${file}`); }
         }
         else { console.log(`Ignoring '${file}' ...`); }
 
@@ -54,7 +54,7 @@ function createJSONFile(files = []) {
 
 
 let directoriesIgnoreList = [".git", ".sass-cache", ".vscode", "figma", "node_modules"];
-let filesIgnoreList = [swFilesToCacheJSON, "test_gradient.html", "ANALYSE.txt", "CREDITS.txt", "sw_files_to_cache_json_builder.js", "LICENSE", ".scss", "package", ".md", ".sh", ".map", ".pdf", "questions_de_reflexion_reponses.txt"];
+let filesIgnoreList = [swFilesToCacheJSON, "test_gradient.html", "ANALYSE.txt", "CREDITS.txt", "sw_files_to_cache_json_builder.js", "LICENSE", ".scss", "package", ".md", ".sh", ".map", ".pdf", "~", "questions_de_reflexion_reponses.txt"];
 let ignoreList = [...directoriesIgnoreList, ...filesIgnoreList];
 createJSONFile(
     listFilesForJSON(".", ignoreList)
