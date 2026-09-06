@@ -51,7 +51,7 @@ function createJSONFile(files = []) {
 
 
 let directoriesIgnoreList = [".git", ".sass-cache", ".vscode", "figma", "node_modules"];
-let filesIgnoreList = [swFilesToCacheJSON, "test_gradient.html", "ANALYSE.txt", "CREDITS.txt", "sw_files_to_cache_json_builder.js", "LICENSE", ".scss", "package", ".md", ".sh", ".map", "questions_de_reflexion_reponses.txt"];
+let filesIgnoreList = [swFilesToCacheJSON, "test_gradient.html", "ANALYSE.txt", "CREDITS.txt", "sw_files_to_cache_json_builder.js", "LICENSE", ".scss", "package", ".md", ".sh", ".map", ".pdf", "questions_de_reflexion_reponses.txt"];
 let ignoreList = [...directoriesIgnoreList, ...filesIgnoreList];
 createJSONFile(
     listFilesForJSON(".", ignoreList)
