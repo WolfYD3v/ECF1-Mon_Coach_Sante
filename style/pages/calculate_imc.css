@@ -25,8 +25,8 @@ body {
     }
 }
 
-.popup { animation: popup 1.5s ease-in-out; }
-.popout { animation: popout 2s ease-in; }
+.popup { animation: popup 1s ease-in-out; }
+.popout { animation: popout 0.65s ease-out; }
 
 @keyframes background-animation {
     0% {

@@ -9,11 +9,11 @@
     border-radius: 15px;
     border: 2px solid #ffa66600;
     background: #ffa66670;
-    transition: all 0.2s ease-out;
+    transition: all 0.15s ease-out;
 }
 .imc-calclated-card:hover {
     height: 55px;
-    transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in-out;
 }
 
 .imc-calclated-card h3 {

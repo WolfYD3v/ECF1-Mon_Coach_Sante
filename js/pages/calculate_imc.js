@@ -110,7 +110,7 @@ async function calculateAndSaveIMC() {
     form.classList.toggle("popout");
     setTimeout(() => {
         menus.removeChild(form);
-    }, 2000);
+    }, 650);
     goToIndexBtn.innerText = "VALIDER";
     goToIndexBtn.style.display = "flex";
 
