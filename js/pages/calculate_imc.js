@@ -28,7 +28,6 @@ let calculateImcFormHeightInput = document.getElementById("calculate-imc-form-he
 let calculateImcFormWeightInput = document.getElementById("calculate-imc-form-weight-input");
 let goToIndexBtn = document.getElementById("go-to-index-btn");
 let imcCalculatedMenu = document.getElementById("imc-calculated-menu");
-console.log(formFields);
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -87,7 +86,6 @@ function getComment(imc) {
     let comment = "";
     Object.keys(IMC_STEPS_FOR_COMMENT).forEach(key => {
         let stepValues = IMC_STEPS_FOR_COMMENT[key];
-        console.log(stepValues);
         if (imc >= stepValues[0] && imc <= stepValues[1]) { comment = String(key); }
     });
 

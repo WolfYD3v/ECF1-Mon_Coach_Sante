@@ -1,12 +1,3 @@
-/*
-TODO:
-
-- Create base JSON file structure     [DONE]
-- Write JSON files on localStorage    [DONE]
-- Read JSON files on localStorage     [DONE]
-- Delete JSON files on localStorage   [DONE]
-*/
-
 const BASE_JSON_FILE_DATA = [];
 export const BASE_JSON_FILE_IMC_CALCULATED_ENTRY = function(_calculatedIMC, _comment) {
     return {
@@ -78,15 +69,6 @@ function writeJSONFile(entryKey, data) {
     });
 
     return promise
-
-    /* if (localStorage.length >= entryKey + 1) {
-        let dataToUpdate = JSON.parse(localStorage.getItem(entryKey));
-        dataToUpdate = [data, ...dataToUpdate];
-        localStorage.setItem(entryKey, JSON.stringify(dataToUpdate));
-    }
-    else {
-        localStorage.setItem(entryKey, JSON.stringify([data]));
-    } */
 }
 
 export function updateLocalStorage(data) {
@@ -96,7 +78,6 @@ export function updateLocalStorage(data) {
 
 export function eraseLocalStorage() {
     localStorage.clear();
-    console.log(getData());
 }
 
 export function getData(maxEntries = 0) {
