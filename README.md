@@ -19,4 +19,4 @@ Le site hébergé sur Github Pages: https://wolfyd3v.github.io/ECF1-Mon_Coach_Sa
 
 
 
-### With the small help of the Brave AI, and Gemini for the favicon and base_icon
+(with the small help of the Brave AI, and Gemini for the base_icon)
